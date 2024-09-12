@@ -12,7 +12,7 @@ En este repositorio podremos encontrar tanto archivos sobre teorias y resumenes 
 
 <br>
 
-<img src="">
+<img src="https://github.com/Cesardrom/2-DAW/blob/9b9d7a6c89475fecf8de138d2dfb42fc5ad6eff5/DEW/img/AdobeStock_126016889apaisado.jpg">
 
 ---
 
