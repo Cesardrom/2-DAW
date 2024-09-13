@@ -6,15 +6,15 @@
 
 Estos son los repositorios de cada asignatura:
 
-- [DEW](https://github.com/Cesardrom/2-DAW/tree/b54eb33da4afbd8bd6cb5b7f4ed7140218831666/DEW)
+- [DEW](https://github.com/Cesardrom/2-DAW/tree/11197c203f3d817bcbf3d1d19d10125653cb8b71/DEW)
 
-- [DPL](https://github.com/Cesardrom/2-DAW/tree/192705febf0e30ce31ec6e099a460c76b4a31023/DPL)
+- [DPL](https://github.com/Cesardrom/2-DAW/tree/11197c203f3d817bcbf3d1d19d10125653cb8b71/DPL)
 
-- [DOR](https://github.com/Cesardrom/2-DAW/tree/192705febf0e30ce31ec6e099a460c76b4a31023/DOR)
+- [DOR](https://github.com/Cesardrom/2-DAW/tree/11197c203f3d817bcbf3d1d19d10125653cb8b71/DOR)
 
-- [DSW](https://github.com/Cesardrom/2-DAW/tree/192705febf0e30ce31ec6e099a460c76b4a31023/DSW)
+- [DSW](https://github.com/Cesardrom/2-DAW/tree/11197c203f3d817bcbf3d1d19d10125653cb8b71/DSW)
 
-- [EMR](https://github.com/Cesardrom/2-DAW/tree/192705febf0e30ce31ec6e099a460c76b4a31023/EMR)
+- [EMR](https://github.com/Cesardrom/2-DAW/tree/11197c203f3d817bcbf3d1d19d10125653cb8b71/EMR)
 
 ---
 
