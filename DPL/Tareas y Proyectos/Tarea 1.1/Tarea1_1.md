@@ -51,9 +51,9 @@
 
 | Alumno | Github |
 |----------|----------|
-| Nichole   |  [Nichole](https://github.com/nicholelouis)  |
-|  David | [David](https://github.com/DavidRiccio)  |
-| Isaias   | [Isaias](https://github.com/IsaiasTolP) |
+| Nichole Andrea Louis  |  [Nichole](https://github.com/nicholelouis)  |
+|  David Enrique Riccio | [David](https://github.com/DavidRiccio)  |
+| Isaias Toledo  | [Isaias](https://github.com/IsaiasTolP) |
 
 ---
 
