@@ -1,6 +1,6 @@
 body {
     margin: 10px;
-    background-image: url('../img/outter-space-background-vector.jpg');
+    background-image: url('../img/background.jpg');
 }
 
 .container {
@@ -20,7 +20,7 @@ body {
 }
 
 #my_canvas {
-    background: #000;
+    background: #000000;
     border: #000 1px solid;
 }
 
