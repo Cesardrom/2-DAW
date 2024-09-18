@@ -9,6 +9,7 @@
 ### AÑADIR  EL FICHERO 2.txt  
 
     Añadimos un fichero utilizando el siguiente comando en la terminal
+    
 <img src="">
 
 ### CREAR UNA RAMA REMOTA v0.2 
