@@ -1,0 +1,30 @@
+*{
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.titulo{
+    background-color: gray;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.body{
+    font-style: italic;
+    text-align: justify;
+    padding: 8px;
+}
+
+.foot{
+    background-color: lightgray;
+    color: white;
+    text-align: center;
+    padding: 8px;
+}
+
+body{
+    border-radius: 4px;
+    box-shadow: 0px 0px 4px 4px lightgrey;  
+}

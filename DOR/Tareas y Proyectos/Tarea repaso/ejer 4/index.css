@@ -1,0 +1,12 @@
+.titulo{
+    font-family: Arial, sans-serif;
+    color: blue;
+    font-size: 24px;
+    text-align: center;
+}
+
+.linea{
+    font-family: Arial, sans-serif;
+    color: red;
+    margin-left: 80px;
+}

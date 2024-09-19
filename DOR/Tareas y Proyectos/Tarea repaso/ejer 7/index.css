@@ -1,0 +1,20 @@
+table{
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td{
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 200px;
+}
+
+th{
+    background-color: black;
+    color: white;
+}
+
+td:nth-child(2){
+    text-align: center;
+}
