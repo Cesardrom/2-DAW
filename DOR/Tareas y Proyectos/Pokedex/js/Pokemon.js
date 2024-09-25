@@ -9,5 +9,7 @@ export default class Pokemon {
         this.pkm_type = data.types;                    // Tipo del pokemon (Devuelve un array)
         this.pkm_height = data.height;
         this.pkm_weight = data.weight;
+        this.pkm_front_shiny = data.sprites.front_shiny;
+        this.pkm_back_shiny = data.sprites.back_shiny;
     }
 }
