@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="pagina2.php?name=César">Redireccion</a>
+    <a href="pagina2.php?name=Alex">Redireccion</a>
 </body>
 </html>
