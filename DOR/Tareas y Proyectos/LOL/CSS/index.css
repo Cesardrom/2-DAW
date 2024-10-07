@@ -17,7 +17,7 @@ header {
     justify-content: center;
 }
 
-.button{
+#button{
     color: white;
     background-color: black;
     cursor: pointer;
@@ -29,4 +29,31 @@ header {
     font-size: 16px;
     font-family: Papyrus, fantasy;  
     line-height: 18px;
+}
+
+#champion_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px 15px;
+    width: 100%;
+}
+
+.card {
+    font-family: DejaVu Sans Mono, monospace;
+    border: 2px solid rgb(78, 78, 78);
+    border-radius: 5px;
+    background-image: linear-gradient(rgb(88, 88, 88), rgb(255, 255, 255));
+    text-align: center;
+}
+
+.tags {
+    border: 1px solid rgb(168, 51, 16);
+    font: bold;
+    background-image: linear-gradient(rgb(190, 30, 9), rgb(143, 76, 13));
+}
+
+.partype{
+    background-color: rgb(67, 144, 163);
+    font-style: italic;
+    text-align: center;
 }

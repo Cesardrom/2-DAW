@@ -4,7 +4,7 @@ export default class Champion {
     constructor(data) {                       
         this.name = data.name;                            
         this.title = data.title;   
-        this.sprite = data.image.sprite
+        this.sprite = `https://ddragon.leagueoflegends.com/cdn/13.18.1/img/champion/${data.image.full}` 
         this.tags = data.tags
         this.partype = data.partype
     }

@@ -10,33 +10,34 @@ button.addEventListener("click", () => {
     // Al hacer click sobre el botón, cambiamos su visibilidad y lo ocultamos
     document.querySelector('#button').style.visibility = 'hidden';
     // También cambiamos la visibilidad del elemento #pokedex, y lo mostramos en pantalla
-    document.querySelector('#pokedex').style.visibility = 'visible';
+    document.querySelector('#champion_list').style.visibility = 'visible';
     // LLamada a la función startPokedex() que comenzará el proceso de mostrar los Pokemon
     startChampions();
 });
 
-// Función asíncrona que va a realizar operaciones con promesas para realizar la llamada a la API
 const startChampions = async () => {
-    // Bucle for que itera desde 1 hasta 151, que son los primeros 151 Pokemon
-    for(var i = 1; i <= 151; i++) {
-        // Utilizamos fetch para hacer una solicitud a la API donde i representa el número de Pokemon
-        await fetch("https://pokeapi.co/api/v2/pokemon/" + i + "/")
-            .then(function(result) {
-                return result.json();
-            // Convertimos la respuesta de la API en un objeto JSON
-            }).then(function(result) {
-                const data = result;
-                const Champion = new Champion (data);
-                pushChampion(Champion);
-                console.log(data);
-                //Guardamos el resultado en data y creamos una nueva instancia de Pokemon con los datos obtenidos
-                // almacenamos los resultados en el array
-               // console.log(pokemon);
-            });
+    const api = "https://ddragon.leagueoflegends.com/cdn/13.18.1/data/es_ES/champion.json"
+    try{
+        const response = await fetch(api);
+        if (!response.ok){
+            throw new Error('Fallo en la lectura de la api')
+        }
+
+        const data = await response.json()
+        const all_warriors = data.data
+
+        Object.keys(all_warriors).forEach(character => {
+            let champion = new Champion(all_warriors[character]);
+            pushChampion(champion);
+        });
+
+        console.log(Champions)
+    } catch (error){
+        console.error('Error', error);
     }
-    // Una vez que todos los Pokemon se han añadido al array, llamamos a la función showPokedex
-    await showChampion();
-};
+
+    showChampions();
+}
 
 // Esta función añade el Pokemon que se le pasa como parámetro al array
 function pushChampion(Champion) {
@@ -49,23 +50,13 @@ const showChampions = async () => {
     const ChampionsList = document.getElementById("champion_list");
     // Iteramos sobre cada elemento del array pokemons
     for(var i = 0; i < Champions.length; i++) {
-        var aux =  0;
-        while (aux != Champions[i].tags.length) {
-            if (aux == 0)
-                var tag1 = Champions[i].Champion.tags[aux];                       
-            if (aux == 1)   
-                var tag2 = Champions[i].Champion.tags[aux];
-            else 
-                tag2 = "";          
-            aux++; 
-        }
         // Para cada Pokemon, se crea una tarjeta con imágenes (vista frontal y trasera), el nombre y los tipos
         // Esta estructura HTML se añade dinámicamente al contenedor pokedex
         ChampionsList.innerHTML +=    `<div class="card">
                                     <img src="${Champions[i].sprite}"><br>
                                     ${Champions[i].name}<br>
                                     <div class="tags">
-                                        ${tag1} ${tag2}
+                                        ${Champions[i].tags}
                                     </div>
                                     <div class="partype">
                                         ${Champions[i].partype}                        

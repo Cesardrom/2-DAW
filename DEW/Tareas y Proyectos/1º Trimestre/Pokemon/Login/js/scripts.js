@@ -1,3 +1,20 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAd-hoVaRfz-3p3eOwFkSskNx_PKEWEk44",
+  authDomain: "compra-pokemon-714b1.firebaseapp.com",
+  projectId: "compra-pokemon-714b1",
+  storageBucket: "compra-pokemon-714b1.appspot.com",
+  messagingSenderId: "643494791325",
+  appId: "1:643494791325:web:21eedc7ddbd622b6f26c74"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 // Expresión regular para validar email
 const emailPattern = /.+@.+\..+/;
 
