@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alltaskdone</title>
+</head>
+<body>
+  <h1>Write down all the tasks you need!!</h1>
+  <div class="tasks">
+    <p>Total tasks: <strong>{{total_tasks}} task{{total_tasks|pluralize}}</strong></p>
+    {% for task in tasks%}
+      {% if task.finished %}
+        <h1>Finished tasks ✅:</h1>
+        <h3>{{task.title}} </h2>
+        <p>{{task.content|truncatewords:30}}</p>
+      {% else %}
+          <h1>Unfinished tasks ❌: </h1>
+          <h3>{{task.title}} </h2>
+          <p>{{task.content|truncatewords:30}}</p>
+      {% endif %}
+    {% endfor %}
+  </div>
+</body>
+</html>
