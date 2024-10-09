@@ -1,0 +1,48 @@
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+  font-family: monospace;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.tasks {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  width: 45%;
+}
+
+.tasks ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tasks ul li {
+  background-color: #e7e7e7;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+.counter {
+  text-align: center;
+}

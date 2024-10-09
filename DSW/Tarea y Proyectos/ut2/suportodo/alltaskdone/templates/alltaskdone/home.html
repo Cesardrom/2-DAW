@@ -3,19 +3,28 @@
 {% block title %}Alltaskdone | Home{% endblock title %}
 
 {% block body %}
-  <h1>Write down all the tasks you need!!</h1>
-  <div class="tasks">
-    <p>Total tasks: <strong>{{total_tasks}} task{{total_tasks|pluralize}}</strong></p>
+  <header>
+    <h1>Write down all the tasks you need!!</h1>
+  </header>
+  <p class="counter">Total tasks: <strong>{{total_tasks}} task{{total_tasks|pluralize}}</strong></p>
+  <main>
     {% for task in tasks%}
       {% if task.finished %}
-        <h1>Finished tasks ✅:</h1>
-        <h3>{{task.title}} </h2>
-        <p>{{task.content|truncatewords:30}}</p>
+        <div class="tasks">
+          <h3>Finished tasks ✅:</h3>
+          <ul>
+            <li><h3><a href="{% url "alltaskdone:task_detail"  task.slug %}">{{task.title}}</a></h3></li>
+          </ul>
+        </div>
       {% else %}
-          <h1>Unfinished tasks ❌: </h1>
-          <h3>{{task.title}} </h2>
-          <p>{{task.content|truncatewords:30}}</p>
+        <div class="tasks">
+          <h3>Unfinished tasks ❌: </h3>
+          <ul>
+            <li><h3><a href="{% url "alltaskdone:task_detail"  task.slug %}">{{task.title}}</a></h3></li>
+          </ul>
+        </div>
       {% endif %}
     {% endfor %}
+  </main>
 
 {% endblock body %}

@@ -1,8 +1,22 @@
 {% extends "alltaskdone/base.html" %}
 
+{% load static %}
+
 {% block title %}Nanobits | Home{% endblock title %}
 
 {% block body %}
+  <h1 class="title">{{task.title}}</h1>
+  {% if task.finished  %}
+    <h3 class="finished">Esta tarea esta realizada ✅</h3>
+  {% else %}
+    <h3 class="finished">Esta tarea esta pendiente ❌</h3>
+  {% endif %}
+  <p class="content">{{task.content}}</p>
 
+  <br>
+  <div class="date">{{task.created_at}}</div>
+
+  <br>
+  <a href="{% url "alltaskdone:home" %}" ><img src={% static "alltaskdone/img/volver.png" %}></a>
 
 {% endblock body %}
