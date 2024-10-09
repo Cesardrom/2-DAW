@@ -53,8 +53,17 @@ const showChampions = async () => {
         // Para cada Pokemon, se crea una tarjeta con imágenes (vista frontal y trasera), el nombre y los tipos
         // Esta estructura HTML se añade dinámicamente al contenedor pokedex
         ChampionsList.innerHTML +=    `<div class="card">
-                                    <img src="${Champions[i].sprite}"><br>
-                                    ${Champions[i].name}<br>
+                                    <img class="front" src="${Champions[i].sprite}">
+                                    <br>
+                                    <p class="name">${Champions[i].name}</p>
+                                    <p class="title">${Champions[i].title}</p>
+                                    <br>
+                                    <div class="attributes"> 
+                                    <p>${Champions[i].attack} attack</p>
+                                    <p>${Champions[i].magic} magic</p>
+                                    <p>${Champions[i].defense} defense</p>
+                                    <p>${Champions[i].difficulty} difficulty</p> 
+                                    </div>
                                     <div class="tags">
                                         ${Champions[i].tags}
                                     </div>
@@ -64,4 +73,5 @@ const showChampions = async () => {
                                 </div>`
     }
 }
+
 

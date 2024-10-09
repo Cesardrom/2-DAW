@@ -33,9 +33,32 @@ header {
 
 #champion_list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 15px 15px;
     width: 100%;
+}
+
+.card:hover img {
+    display:none;
+}
+.card .attributes {
+    display:none;
+}
+.card:hover .attributes {
+    display: inline-block;
+}
+.card:hover .title {
+    display: inline-block;
+}
+
+.card:hover .tags {
+    display: none;
+}
+.card:hover .partype {
+    display: none;
+}
+.card:hover .name {
+    display: none;
 }
 
 .card {

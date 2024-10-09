@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "prueba");
+$conn = new mysqli("localhost", "root", "users", "users");
 
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
@@ -14,9 +14,9 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<tr>";
         echo "<td>" . $row['id'] . "</td>";
-        echo "<td>" . $row['name'] . "</td>";
+        echo "<td>" . $row['nombre'] . "</td>";
         echo "<td>" . $row['email'] . "</td>";
-        echo "<td>" . $row['password'] . "</td>";
+        echo "<td>" . $row['contraseña'] . "</td>";
         echo "</tr>";
     }
     echo "</table>";
