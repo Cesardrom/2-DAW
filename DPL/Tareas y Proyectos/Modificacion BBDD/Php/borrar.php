@@ -1,9 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "users", "users");
-
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-}
+$conn = new mysqli("localhost", "Josh Sunday", "123456789", "users");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];

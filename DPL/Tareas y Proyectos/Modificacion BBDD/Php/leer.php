@@ -1,9 +1,6 @@
 <?php
-$conn = new mysqli("localhost", "root", "users", "users");
+$conn = new mysqli("localhost", "Josh Sunday", "123456789", "users");
 
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-}
 
 $sql = "SELECT * FROM users";
 $result = $conn->query($sql);
