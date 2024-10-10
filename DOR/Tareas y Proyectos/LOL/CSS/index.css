@@ -1,5 +1,5 @@
 body{
-    background: url("../sources/assests/images/Background.webp");
+    background: url("../sources/assests/images/backgroung2.jpg");
 }
 
 header {
@@ -15,6 +15,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.title{
+    font-size: 12px;
 }
 
 #button{
@@ -34,7 +38,7 @@ header {
 #champion_list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 15px 15px;
+    grid-gap: 15px 20px;
     width: 100%;
 }
 
@@ -44,11 +48,15 @@ header {
 .card .attributes {
     display:none;
 }
+.card .full_image{
+    display: none;
+}
 .card:hover .attributes {
     display: inline-block;
 }
 .card:hover .title {
     display: inline-block;
+    font-size: 16px;
 }
 
 .card:hover .tags {
@@ -69,14 +77,23 @@ header {
     text-align: center;
 }
 
+.card:hover{
+    background-image: linear-gradient(rgb(119, 145, 122), rgba(195, 152, 206, 0.589));
+}
 .tags {
     border: 1px solid rgb(168, 51, 16);
     font: bold;
     background-image: linear-gradient(rgb(190, 30, 9), rgb(143, 76, 13));
+    color: white;
 }
 
 .partype{
     background-color: rgb(67, 144, 163);
     font-style: italic;
     text-align: center;
+    color: white;
+}
+
+.attributes {
+    color: aquamarine;
 }

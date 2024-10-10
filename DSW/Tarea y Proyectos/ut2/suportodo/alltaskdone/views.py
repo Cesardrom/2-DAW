@@ -4,14 +4,9 @@ from alltaskdone.models import Task
 
 
 def home(request):
-    finished_tasks = Task.objects.filter(done=True).count()
-    unfinished_tasks = Task.objects.filter(done=False).count()
+    total_tasks = Task.objects.count()
     tasks = Task.objects.all()
-    return render(
-        request,
-        'alltaskdone/home.html',
-        {'finished_tasks': finished_tasks, 'unfinished_tasks': unfinished_tasks, 'tasks': tasks},
-    )
+    return render(request, 'alltaskdone/home.html', {'total_tasks': total_tasks, 'tasks': tasks})
 
 
 def task_detail(request, task_slug: str):
