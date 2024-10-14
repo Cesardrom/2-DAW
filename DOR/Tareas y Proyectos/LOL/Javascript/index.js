@@ -1,26 +1,27 @@
 import Champion from './champions.js';
-import song from '../sources/assests/songs/*.mp3'
+import songs from '../sources/assests/songs/*.mp3'
 import Player from './player.js';
 
 var Champions = [];
-Object.keys(song);
 
-const map = { };
-
-let aux = 1;
-
-for (var key of Object.keys(song)){
-    map[`.item-${aux}`] = song[key];
-    aux += 1;
-}
-
-const player = new Player(map)
 
 const button = document.querySelector("button");
 button.addEventListener("click", () => {
     document.querySelector('#button').style.visibility = 'hidden';
     document.querySelector('#champion_list').style.visibility = 'visible';
     startChampions();
+    Object.keys(songs);
+
+    const map = { };
+
+    let aux = 1;
+
+    for (var key of Object.keys(songs)){
+        map[`.item-${aux}`] = songs[key];
+        aux += 1;
+    }
+
+    const player = new Player(map)
 });
 
 const startChampions = async () => {

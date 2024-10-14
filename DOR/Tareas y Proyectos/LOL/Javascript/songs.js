@@ -5,7 +5,5 @@ export default class Song {
     }
 }
 export function play_song(song){
-    song.element.onclick() = () => {
-        song.audio.play();
-};
+    song.audio.play();
 };
