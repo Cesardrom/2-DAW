@@ -1,10 +1,11 @@
 export default class Song {
-    constructor(songPath) {
-        this.songPath = songPath;
-    }
-
-    play() {
-        let audio = new Audio(this.songPath);
-        audio.play();
+    constructor(songPath, audio) {
+        this.element = document.querySelector(songPath);
+        this.audio = new Audio(audio);
     }
 }
+export function play_song(song){
+    song.element.onclick() = () => {
+        song.audio.play();
+};
+};
