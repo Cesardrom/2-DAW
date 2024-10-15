@@ -23,3 +23,15 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualizar Usuario</title>
+</head>
+<body>
+    <form method="get" action="../Interfaz.html">
+        <button type="submit">Volver a la Página HTML</button>
+    </form>
+</body>
+</html>
