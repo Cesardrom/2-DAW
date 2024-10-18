@@ -3,6 +3,7 @@
 {% block title %}Alltaskdone | Home{% endblock title %}
 
 {% block body %}
+<<<<<<< HEAD
   <h1>Write down all the tasks you need!!</h1>
   <div class="tasks">
     <p>Total tasks: <strong>{{total_tasks}} task{{total_tasks|pluralize}}</strong></p>
@@ -17,5 +18,33 @@
           <p>{{task.content|truncatewords:30}}</p>
       {% endif %}
     {% endfor %}
+=======
+  <header>
+    <h1>“AllTaskDone: Achieve More, Stress Less”</h1>
+    <a href="{% url "alltaskdone:add-task" %}">Crear Tarea</a>
+  </header>
+  <main>
+    <div class="tasks finished">
+      <h3>Finished tasks ✅: {% if finished_tasks > 0 %} {{finished_tasks}} {% else %} Tienes tareas pendientes{% endif %}</h3>
+      <ul>
+        {% for task in tasks  %}
+          {% if task.done %}
+            <li><h3><a href="{% url "alltaskdone:task-detail"  task.slug %}">{{task.title}}</a></h3></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="tasks unfinished">
+      <h3>Unfinished tasks ❌:{% if unfinished_tasks > 0 %} {{unfinished_tasks}} {% else %} No tienes tareas pendientes. ¡Enhorabuena! {% endif %}</h3>
+      <ul>
+        {% for task in tasks %}
+          {% if not task.done %}
+            <li><h3><a href="{% url "alltaskdone:task-detail"  task.slug %}">{{task.title}}</a></h3></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </main>
+>>>>>>> f63b107 (sUBIMOS LO ECHO EN dsw)
 
 {% endblock body %}

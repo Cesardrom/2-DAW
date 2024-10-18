@@ -1,0 +1,37 @@
+{% extends "./base.html" %}
+
+{% block body %}
+  <br>
+  <ul class="nav nav-pills justify-content-center nav-fill">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Todas las tareas</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="">Tareas terminadas</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Tareas pendientes</a>
+    </li>
+  </ul>
+  <br>
+  <br>
+  {% for task in total_tasks %}
+    <div class="card">
+      <div class="card-header">
+        {{ task.name }} 
+        {% if task.done %} <a class="btn btn-success" href="#" role="button">Completada</a> 
+        {% else %} <a class="btn btn-danger" href="#" role="button">Pendiente</a>
+        {% endif %}
+        <a class="btn btn-secondary" href="#" role="button">Editar</a>
+        <a class="btn btn-warning" href="#" role="button">Borrar</a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text">{{ task.description }}</p>
+        <a href="{% url "tasks:task-detail" task.slug %}" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <br>
+  {% endfor %}
+
+{% endblock body %}

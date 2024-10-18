@@ -1,0 +1,20 @@
+{% extends "alltaskdone/base.html" %}
+
+{% load static %}
+
+{% block title %}Alltaskdone | Add Task{% endblock title %}
+
+{% block body %}
+<header>
+  <h1>Crea tu post rellenando este formulario</h1>
+</header>
+
+<form method="post" novalidate>
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="Crear">
+</form>
+
+<a class="return" href="{% url "alltaskdone:home" %}" ><img src={% static "alltaskdone/img/volver.png" %}></a>
+
+{% endblock body %}
