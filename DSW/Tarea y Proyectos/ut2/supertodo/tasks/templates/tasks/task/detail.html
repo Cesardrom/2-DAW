@@ -1,18 +1,28 @@
 {% extends "../base.html" %}
 
 {% block body %}
-  <ul class="nav nav-pills">
+  <br>
+  <ul class="nav nav-pills justify-content-center nav-fill">
     <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Active</a>
+      <a class="nav-link active" aria-current="page" href={% url "tasks:task-list" %}>Todas las tareas</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
+      <a class="nav-link active" href="{% url "tasks:done-list" %}">Tareas terminadas</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+      <a class="nav-link active" href="{% url "tasks:pending-list" %}">Tareas pendientes</a>
     </li>
   </ul>
+  <br>
+  <br>
+  <h1>{{task.name}}</h1>
+  <div class="description">
+    <p>{{task.content}}</p>
+    {% if task.done %} 
+      <a class="btn btn-outline-success" href="{% url "tasks:toggle-task" task.slug %}" role="button">Completada</a> 
+    {% else %} 
+      <a class="btn btn-outline-danger" href="{% url "tasks:toggle-task" task.slug %}" role="button">Pendiente</a>
+    {% endif %}
+    <h5>Dia limite:{{task.complete_before}} Creado el:{{task.created_at}}</h3>
+  </div>
 {% endblock body %}

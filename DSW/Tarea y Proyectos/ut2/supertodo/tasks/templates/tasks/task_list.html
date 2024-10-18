@@ -4,26 +4,32 @@
   <br>
   <ul class="nav nav-pills justify-content-center nav-fill">
     <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Todas las tareas</a>
+      <a class="nav-link active" aria-current="page" href={% url "tasks:task-list" %}>Todas las tareas</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="">Tareas terminadas</a>
+      <a class="nav-link active" href="{% url "tasks:done-list" %}">Tareas terminadas</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Tareas pendientes</a>
+      <a class="nav-link active" href="{% url "tasks:pending-list" %}">Tareas pendientes</a>
     </li>
   </ul>
   <br>
+  <br>
+  <div class="d-grid gap-2">
+    <a class="btn btn-outline-primary" href="{% url "tasks:add-task" %} "role="button">Añadir Tarea</a>
+  </div>
   <br>
   {% for task in total_tasks %}
     <div class="card">
       <div class="card-header">
         {{ task.name }} 
-        {% if task.done %} <a class="btn btn-success" href="#" role="button">Completada</a> 
-        {% else %} <a class="btn btn-danger" href="#" role="button">Pendiente</a>
+        {% if task.done %} 
+        <a class="btn btn-outline-success" href="{% url "tasks:toggle-task" task.slug %}" role="button">Completada</a> 
+        {% else %} 
+        <a class="btn btn-outline-danger" href="{% url "tasks:toggle-task" task.slug %}" role="button">Pendiente</a>
         {% endif %}
-        <a class="btn btn-secondary" href="#" role="button">Editar</a>
-        <a class="btn btn-warning" href="#" role="button">Borrar</a>
+        <a class="btn btn-outline-secondary" href="{% url "tasks:edit-task" task.slug %}" role="button">Editar</a>
+        <a class="btn btn-outline-warning" href="{% url "tasks:delete-task" task.slug %}" role="button">Borrar</a>
       </div>
       <div class="card-body">
         <h5 class="card-title"></h5>
