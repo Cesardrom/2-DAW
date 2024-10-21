@@ -56,12 +56,10 @@ def task_detail(request, slug: str):
 
 
 def toggle_task(request, slug: str):
-    task = Task.objects.filter(slug=slug)
-    if task.done:
-        task.update(done=False)
-    else:
-        task.update(done=True)
-    return render(request, 'tasks/task_list.html', {'task': task})
+    task = Task.objects.get(slug=slug)
+    task.done = not task.done
+    task.save()
+    return redirect('tasks:task-list')
 
 
 def edit_task(request, slug: str):
@@ -80,4 +78,4 @@ def edit_task(request, slug: str):
 def delete_task(request, slug: str):
     task = Task.objects.get(slug=slug)
     task.delete()
-    return render(request, 'tasks/task_list.html')
+    return redirect('tasks:task-list')
