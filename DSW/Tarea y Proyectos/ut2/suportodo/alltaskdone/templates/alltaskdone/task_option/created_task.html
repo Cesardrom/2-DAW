@@ -1,0 +1,17 @@
+{% extends "alltaskdone/base.html" %}
+
+{% load static %}
+
+{% block title %}Alltaskdone | Created{% endblock title %}
+
+{% block body %}
+
+<header>
+  <h1>Felicidades</h1>
+</header>
+
+<p>Felicidades tu tarea con titulo {{task.title}} fue creado con exito a {{task.created_at}}</p>
+
+<a class="return" href="{% url "alltaskdone:home" %}" ><img src={% static "alltaskdone/img/volver.png" %}></a>
+
+{% endblock body %}
