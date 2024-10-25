@@ -1,6 +1,17 @@
 {% extends "../base.html" %}
 
+{% block title %}AllTaskDone| Edit Task{% endblock title %}
+
 {% block body %}
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url "tasks:task-list" %}">Task List </a></li>
+    >
+    <li class="breadcrumb-item"><a href="{% url "tasks:task-detail" task.slug %}">{{task.name}}</a></li>
+    >
+    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+  </ol>
+</nav>
   <h1>Editando post</h1>
   <form method="post">
     {% csrf_token %}

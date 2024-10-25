@@ -1,24 +1,57 @@
 {% extends "./base.html" %}
 
+{% block title %}AllTaskDone| Task List{% endblock title %}
+
 {% block body %}
-  {% for task in total_tasks %}
-    <div class="card mb-5">
-      <div class="card-header">
-        {{ task.name }} 
-        {% if task.done %} 
-        <a class="btn btn-outline-success" href="{% url "tasks:toggle-task" task.slug %}" role="button">Completada</a> 
-        {% else %} 
-        <a class="btn btn-outline-danger" href="{% url "tasks:toggle-task" task.slug %}" role="button">Pendiente</a>
-        {% endif %}
-        <a class="btn btn-outline-secondary" href="{% url "tasks:edit-task" task.slug %}" role="button">Editar</a>
-        <a class="btn btn-outline-warning" href="{% url "tasks:delete-task" task.slug %}" role="button">Borrar</a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title"></h5>
-        <p class="card-text">{{ task.description }}</p>
-        <a href="{% url "tasks:task-detail" task.slug %}" class="btn btn-primary">Go somewhere</a>
-      </div>
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url "tasks:task-list" %}">Task List</a></li>
+    {% if complete == 1 %}
+    {% elif complete == 2 %}
+    >
+    <li class="breadcrumb-item active" aria-current="page">Done List</li>
+    {% else %}
+    >
+    <li class="breadcrumb-item active" aria-current="page">Pending List</li>
+    {% endif %}
+  </ol>
+</nav>
+{% for task in total_tasks %}
+<div class="container text-center mb-5">
+  <div class="row align-items-start ">
+    <div class="col">
+        <div class="card text-center">
+          <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+              <li class="nav-item me-2">
+                <a class="btn btn-outline-secondary" href="{% url "tasks:edit-task" task.slug %}" role="button">Editar</a>
+              </li>
+              <li class="nav-item me-2">
+                <a class="btn btn-outline-warning" href="{% url "tasks:delete-task" task.slug %}" role="button">Borrar</a>
+              </li>
+              <li class="nav-item me-2">
+                {% if task.done %} 
+                  <a class="btn btn-outline-success" href="{% url "tasks:toggle-task" task.slug %}" role="button">Abrir tarea 🔒</a> 
+                {% else %} 
+                  <a class="btn btn-outline-danger" href="{% url "tasks:toggle-task" task.slug %}" role="button">Cerrar tarea 🔓</a>
+                {% endif %}
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{task.name}}</h5>
+            <p class="card-text">{{task.description}}</p>
+            <a href="{% url "tasks:task-detail" task.slug %}" class="btn btn-primary">Ver tarea</a>
+          </div>
+        </div>
     </div>
-  {% endfor %}
+  </div>
+</div>
+{% empty %}
+  <div class="alert alert-info" role="alert">
+    No tienes ninguna tarea
+  </div>
+{% endfor %}
+
 
 {% endblock body %}

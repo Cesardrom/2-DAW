@@ -1,15 +1,41 @@
 {% extends "../base.html" %}
 
+{% block title %}AllTaskDone| {{task.name}}{% endblock title %}
+
 {% block body %}
-  <h1>{{task.name}}  
-  {% if task.done %} 
-    <a class="btn btn-outline-success" href="{% url "tasks:toggle-task" task.slug %}" role="button">Completada</a> 
-  {% else %} 
-    <a class="btn btn-outline-danger" href="{% url "tasks:toggle-task" task.slug %}" role="button">Pendiente</a>
-  {% endif %}</h1>
-  <div class="description">
-    <p>{{task.description}}</p>
-   
-    <h5>Dia limite:{{task.complete_before}} Creado el:{{task.created_at}}</h3>
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url "tasks:task-list" %}">Task List</a></li>
+    >
+    <li class="breadcrumb-item active" aria-current="page">{{task.name}}</li>
+  </ol>
+</nav>
+  <div class="container text-center mb-5">
+    <div class="row align-items-start ">
+      <div class="col">
+        <div class="card text-center">
+          <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+              <li class="nav-item">
+                {% if task.done %} 
+                  <a class="btn btn-outline-success" href="{% url "tasks:toggle-task" task.slug %}" role="button">Cerrar tarea 🔓</a> 
+                {% else %} 
+                  <a class="btn btn-outline-danger" href="{% url "tasks:toggle-task" task.slug %}" role="button">Abrir tarea 🔒</a>
+                {% endif %}
+              </li>
+              <li class="nav-item ms-3">
+                <a class="btn btn-outline-secondary" href="{% url "tasks:edit-task" task.slug %}" role="button">Editar</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{task.name}}</h5>
+            <p class="card-text">{{task.description}}</p>
+            <p class="card-text"><small class="text-body-secondary">{% if task.complete_before %}Completar antes del: {{task.complete_before}}{% endif %}</p>
+            <p class="card-text"><small class="text-body-secondary">Creado el dia: {{task.created_at}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 {% endblock body %}
