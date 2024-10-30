@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <h1>{{creature.name}}</h1>
+    <li>{{creature.type1}}</li>
+    <li>{{creature.attack}}</li>
+    <li>{{creature.defense}}</li>
+    <li>{{creature.speed}}</li>
+    <li>{{creature.generation}}</li>
+  </ul>
+  <a href="{% url "creatures:creature-list" %}">Vuelve a la lista</a>
+
+</body>
+</html>

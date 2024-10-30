@@ -1,0 +1,12 @@
+{% extends "./base.html" %}
+
+{% block body %}
+{% if user.is_authenticated %}
+{% else %}
+  <p>
+    Si no estas registrado <a href="{% url "signup" %}">pulse aqui</a>
+    Si quiere iniciar sesion <a href="{% url "login" %}">pulse aqui</a>
+  </p>
+{% endif %}
+
+{% endblock %}

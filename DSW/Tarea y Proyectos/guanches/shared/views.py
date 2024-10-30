@@ -1,22 +1,25 @@
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, get_user_model, login, logout
 from django.shortcuts import redirect, render
 
+from echos.models import Echo
 from shared.forms import LoginForm, SignupForm
 
 
+def home(request):
+    return render(request, 'home.html')
+
+
 def user_login(request):
-    verified = True
     if request.method == 'POST':
         if (form := LoginForm(request.POST)).is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             if user := authenticate(request, username=username, password=password):
                 login(request, user)
-                return redirect('show-profile', username)
+                return redirect('show-profile', user.username)
     else:
-        verified = False
         form = LoginForm()
-    return render(request, 'login.html', {'form': form, 'verified': verified})
+    return render(request, 'login.html', dict(form=form))
 
 
 def user_logout(request):
@@ -25,13 +28,15 @@ def user_logout(request):
 
 
 def user_signup(request):
-    if request.method == 'POST':
-        if (form := SignupForm(request.POST)).is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('show-profile')
-    else:
-        form = SignupForm()
+    form = SignupForm(request.POST or None)
+
+    if (form := SignupForm(request.POST)).is_valid():
+        user = form.save(commit=False)
+        user.set_password(form.cleaned_data['password'])
+        user.save()
+        login(request, user)
+        return redirect('show-profile', user.username)
+
     return render(request, 'signup.html', dict(form=form))
 
 
@@ -39,5 +44,8 @@ def show_profile(request, username: str):
     return render(request, 'profile.html', dict(username=username))
 
 
-def user_echos(request):
-    pass
+def user_echos(request, username):
+    users = get_user_model()
+    user = users.objects.get(username=username)
+    echos = Echo.objects.filter(user=user.id)
+    return render(request, 'echos/timeline.html', dict(echos=echos))

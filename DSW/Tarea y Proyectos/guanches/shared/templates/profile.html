@@ -3,5 +3,6 @@
 {% block title %}Tribu| Login{% endblock title %}
 
 {% block body %}
-Holi {{ user.username }}
+Holi {{ user }}
+<a href="{% url "user-echos" user.username %}">Mire sus echos aqui</a>
 {% endblock body %}

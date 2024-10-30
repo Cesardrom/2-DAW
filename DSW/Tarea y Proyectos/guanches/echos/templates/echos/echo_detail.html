@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <h1><a href="{% url "show-profile" echo.user %}">{{echo.user}}</a></h1>
+    <p>{{echo.content}}</p>
+    <p>{{echo.created_at}}</p>
+    <p>{{echo.updated_at}}</p>
+    <a href="{% url "echos:echo-list" %}">Vuelve al home</a>
+{% endblock body %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block body %}
+<a href="{% url "echos:add-echo" %}">Añade un echo</a>
+  {% for echo in echos %}
+    <h1><a href="{% url "show-profile" echo.user %}">{{echo.user}}</a></h1>
+    <p>{{echo.content}}</p>
+    <a href="{% url "echos:echo-detail" echo.id %}">Para ver el echo y sus comentarios pulse aqui</a>
+  {% endfor %}
+{% endblock body %}
+

@@ -1,12 +1,10 @@
-{% extends "./base.html" %}
-
-{% block title %}Tribu| Sign up{% endblock title %}
+{% extends "base.html" %}
 
 {% block body %}
-  <form method="post" novalidate>
+<form method="post" novalidate>
     {% csrf_token %}
     {{ form }}
-    <input type="submit" value="Login">
-    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
-  </form>
-{% endblock body %}
+    <input type="submit" value="Registro">
+    <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}">Haz login aquí</a></p>
+</form>
+{% endblock %}
