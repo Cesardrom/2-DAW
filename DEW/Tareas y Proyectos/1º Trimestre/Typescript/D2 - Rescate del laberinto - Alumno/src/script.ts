@@ -114,7 +114,7 @@ namespace LaberintoGame {
                     this.terminarJuego(false); 
                 }
 
-                //Falta que cuando llegue al la salido se termine el juego, que el tiempo baje, y la energia se modifique dependiendo de cada cosa
+                //Falta que cuando llegue al la salido se termine el juego, que el tiempo baje, y la energia se modifique dependiendo de cada cosa, que la trampa y boosters se mantengan en la pantalla
 
             }
         }
