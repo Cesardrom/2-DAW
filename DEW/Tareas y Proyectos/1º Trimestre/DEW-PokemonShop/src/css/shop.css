@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.contenedor-aplicacion {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cabecera-principal {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+.panel-navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.info-usuario {
+    font-weight: bold;
+}
+
+.barra-busqueda input {
+    padding: 8px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.btn-accion {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.area-contenido {
+    margin-top: 20px;
+}
+
+.pantalla-carga {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #666;
+}
+
+.coleccion-criaturas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .panel-navegacion {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .barra-busqueda, .panel-acciones {
+        margin-top: 10px;
+    }
+}
