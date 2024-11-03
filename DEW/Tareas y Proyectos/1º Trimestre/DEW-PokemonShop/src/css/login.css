@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cabecera-autenticacion {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.envoltorio-logo img {
+    max-width: 200px;
+}
+
+.contenido-autenticacion {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.contenedor-formulario-autenticacion {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 45%;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.titulo-formulario {
+    color: #333;
+    text-align: center;
+}
+
+.grupo-formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-entrada {
+    margin-bottom: 15px;
+}
+
+.grupo-entrada label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.grupo-entrada input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.btn-primario, .btn-secundario {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primario {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-secundario {
+    background-color: #008CBA;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .contenedor-formulario-autenticacion {
+        width: 100%;
+    }
+}
