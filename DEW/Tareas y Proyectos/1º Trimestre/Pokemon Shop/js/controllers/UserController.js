@@ -1,4 +1,4 @@
-import DBConnection from "../models/database.js";
+import DBConnection from "../modelos/database.js";
 
 export default class UserController {
     constructor() {

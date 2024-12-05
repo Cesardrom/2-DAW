@@ -1,4 +1,4 @@
-import DBConnection from "./models/database.js";
+import DBConnection from "./modelos/database.js";
 
 const database = new DBConnection()
 const loginButton = document.getElementById("login-button");
@@ -16,8 +16,11 @@ async function login() {
 
     for (const user of allUsers) {
         if (user["username"] == inputUsername && user["password"] == inputPassword) {
-            window.location.href = `shop.html?id=${user["id"]}`;
+            window.open(`shop.html?id=${user["id"]}`);
             return
+        }
+        else {
+            alert('El usuario o la contraseña son incorrectas')
         }
     }
 }
@@ -31,7 +34,7 @@ async function register() {
 
     for (const user of allUsers) {
         if (user["username"] == inputUsername) {
-            alert("Error: Username already used! Please use another username...")
+            alert("El nombre de usario ya existe elija otro por favor")
             return
         }
     } 
@@ -46,12 +49,8 @@ async function register() {
             shoppingCart: []
         }
         await database.addFile(data)
-        alert(`New user ${inputUsername} created! Please login into the shop...`)
+        alert(`El nuevo usuario ${inputUsername} se ha creado exitosamente`)
     } else {
-        alert("Password don't matches!")
+        alert("Las contraseñas son diferentes")
     }
 }
-
-signupButton.addEventListener("click", function(e) {
-
-});

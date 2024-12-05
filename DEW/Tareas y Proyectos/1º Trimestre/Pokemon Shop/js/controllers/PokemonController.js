@@ -1,5 +1,5 @@
-import PokemonModel from "../models/PokemonModel.js";
-import PokemonView from "../views/PokemonView.js";
+import PokemonModel from "../modelos/PokemonModel.js";
+import PokemonView from "../vistas/PokemonView.js";
 import UserController from "./UserController.js";
 
 export default class PokemonController {

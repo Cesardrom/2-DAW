@@ -1,5 +1,5 @@
-import DBConnection from "../models/database.js"
-import PokemonModel from "../models/PokemonModel.js"
+import DBConnection from "../modelos/database.js"
+import PokemonModel from "../modelos/PokemonModel.js"
 
 const database = new DBConnection()
 const pokemonModel = new PokemonModel()
