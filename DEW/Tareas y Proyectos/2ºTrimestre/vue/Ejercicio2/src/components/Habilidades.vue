@@ -1,17 +1,22 @@
-<script setup>
-import { ref } from 'vue'
-
-defineProps({
-  msg: String,
-})
-
-const count = ref(0)
-</script>
-
 <template>
-  <h1>a</h1>
+  <div class="container">
+    <h1>{{ $t("habilidades.title") }}</h1>
+    <div class="row">
+      <div v-for="card in $t('habilidades.cards')" :key="card.name" class="col-md-4">
+        <TarjetaHabilidad :card="card" />
+      </div>
+    </div>
+  </div>
 </template>
 
-<style scoped>
+<script lang="ts">
+import { defineComponent } from 'vue';
+import TarjetaHabilidad from './TarjetaHabilidad.vue';
 
-</style>
+export default defineComponent({
+  name: 'Habilidades',
+  components: {
+    TarjetaHabilidad,
+  },
+});
+</script>

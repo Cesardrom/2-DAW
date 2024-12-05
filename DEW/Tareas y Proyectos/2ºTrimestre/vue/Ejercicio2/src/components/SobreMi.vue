@@ -1,17 +1,15 @@
-<script setup>
-import { ref } from 'vue'
-
-defineProps({
-  msg: String,
-})
-
-const count = ref(0)
-</script>
-
 <template>
-  
+  <div class="container">
+    <h1>{{ $t("sobreMi.title") }}</h1>
+    <img src="ruta/foto.jpg" alt="Foto de perfil" />
+    <p>{{ $t("sobreMi.description") }}</p>
+  </div>
 </template>
 
-<style scoped>
+<script lang="ts">
+import { defineComponent } from 'vue';
 
-</style>
+export default defineComponent({
+  name: 'SobreMi',
+});
+</script>

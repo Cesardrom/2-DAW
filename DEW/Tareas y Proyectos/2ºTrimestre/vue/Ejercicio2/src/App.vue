@@ -1,16 +1,18 @@
-<script setup>
-  import NavBar from './components/NavBar.vue'
-  import Habilidades from './components/Habilidades.vue';
-</script>
-
 <template>
-  <NavBar></NavBar>
-
-  <main>
+  <div id="app">
+    <NavBar />
     <router-view />
-  </main>
+  </div>
 </template>
 
-<style scoped>
+<script lang="ts">
+import { defineComponent } from 'vue';
+import NavBar from './components/NavBar.vue';
 
-</style>
+export default defineComponent({
+  name: 'App',
+  components: {
+    NavBar,
+  },
+});
+</script>
